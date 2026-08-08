@@ -9,6 +9,8 @@
 
 ![TryHackMe Hacker Holidays 2026](<img width="1400" height="633" alt="image" src="https://github.com/user-attachments/assets/bf5d50fb-6d1a-4451-98d6-572d7b76970a" />
 )
+<img width="1400" height="633" alt="image" src="https://github.com/user-attachments/assets/2cb265f8-8aaf-4d71-8a90-4135100f589b" />
+
 
 ## Introduction
 
