@@ -7,7 +7,8 @@
 *Disclaimer: This write-up documents an authorized TryHackMe CTF challenge performed in a controlled training environment. All commands shown are used for forensic analysis of challenge-provided artifacts. No real-world systems were targeted, and the recovered executable was analyzed statically rather than executed.*
 
 
-![TryHackMe Hacker Holidays 2026](<img width="1400" height="633" alt="image" src="https://github.com/user-attachments/assets/5628ec21-63ea-4ebf-a8f1-f19a3bbca059" />)
+![TryHackMe Hacker Holidays 2026](<img width="1400" height="633" alt="image" src="https://github.com/user-attachments/assets/bf5d50fb-6d1a-4451-98d6-572d7b76970a" />
+)
 
 ## Introduction
 
