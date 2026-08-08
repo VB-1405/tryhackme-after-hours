@@ -6,9 +6,6 @@
 
 *Disclaimer: This write-up documents an authorized TryHackMe CTF challenge performed in a controlled training environment. All commands shown are used for forensic analysis of challenge-provided artifacts. No real-world systems were targeted, and the recovered executable was analyzed statically rather than executed.*
 
-
-![TryHackMe Hacker Holidays 2026](<img width="1400" height="633" alt="image" src="https://github.com/user-attachments/assets/bf5d50fb-6d1a-4451-98d6-572d7b76970a" />
-)
 <img width="1400" height="633" alt="image" src="https://github.com/user-attachments/assets/2cb265f8-8aaf-4d71-8a90-4135100f589b" />
 
 
@@ -106,6 +103,8 @@ strings OBJECTS.DATA | grep -Ei \
 
 Same command on both platforms.
 
+<img width="1400" height="704" alt="image" src="https://github.com/user-attachments/assets/702ba435-3aa8-46c0-8699-d4186e860c4f" />
+
 
 The interesting hits included:
 
@@ -128,6 +127,8 @@ strings INDEX.BTR | grep -Ei \
 ```
 
 This works the same way on macOS and Kali.
+
+<img width="1400" height="198" alt="image" src="https://github.com/user-attachments/assets/a0be0358-b67e-420b-ae3f-df30ccaac703" />
 
 
 One of the names that appeared was:
@@ -175,6 +176,8 @@ PY
 
 This works unchanged on both macOS and Kali Linux.
 
+<img width="1400" height="510" alt="image" src="https://github.com/user-attachments/assets/3e17349f-c205-4e26-b59d-424f4439f3f5" />
+
 
 The important part of the decoded script was:
 
@@ -209,6 +212,8 @@ strings OBJECTS.DATA | grep -A3 -B3 "Win32_HardwareTelemetry"
 ```
 
 Same command on macOS and Kali.
+
+<img width="1400" height="326" alt="image" src="https://github.com/user-attachments/assets/799c7774-95b9-4256-bee7-f7c4a7759bef" />
 
 
 Near that class was a large Base64-looking blob.
@@ -250,6 +255,8 @@ PY
 
 Again, this runs the same way on both systems.
 
+<img width="1302" height="850" alt="image" src="https://github.com/user-attachments/assets/9920e176-88b4-4e56-9b65-2c46aa1d16ad" />
+
 
 The `-15` tells Python to treat the data as **raw DEFLATE**, which matches what the PowerShell loader was doing.
 
@@ -270,6 +277,8 @@ file payload.exe
 ```
 
 Same result conceptually: it should identify the file as a Windows PE executable and .NET assembly.
+
+<img width="1400" height="124" alt="image" src="https://github.com/user-attachments/assets/9accad66-d880-4e8b-8734-7414b960063c" />
 
 
 At this point I still did not execute the file.
@@ -318,6 +327,7 @@ for word in re.findall(
 PY
 ```
 
+<img width="1314" height="962" alt="image" src="https://github.com/user-attachments/assets/5a6cd551-c487-49d3-97b1-609f9877f2ff" />
 
 Among the extracted strings, one stood out:
 
@@ -364,6 +374,9 @@ THM{********}
 ```
 THM{********}
 ```
+
+<img width="1400" height="79" alt="image" src="https://github.com/user-attachments/assets/c5ee6f0e-cb8e-42a6-8eff-20530d9d03d4" />
+
 
 **What the Full Chain Looked Like**
 
